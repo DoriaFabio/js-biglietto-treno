@@ -9,5 +9,18 @@ console.clear();
 
 const km = prompt("Inserisci il numero di km");
 console.log("L'utente vuole percorrere", km);
-const età = prompt("Inserisci l'età");
-console.log("L'utente ha " + età + " anni");
+const age = prompt("Inserisci l'età");
+console.log("L'utente ha " + age + " anni");
+let prezzoTotale = 0.21*km;
+console.log("Il prezzo totale è ", prezzoTotale);
+let prezzoScontato = 0;
+let messaggio = " ";
+if (age<=18) {
+    prezzoScontato = prezzoTotale - (prezzoTotale * 0.2); 
+    messaggio = ("Il prezzo scontato per i minorenni è ");
+} else if (age>=65) {
+    prezzoScontato = prezzoTotale - (prezzoTotale * 0.4); 
+    messaggio = ("Il prezzo scontato per gli over 65 è ");
+}
+
+console.log (messaggio + prezzoScontato.toFixed(2));
